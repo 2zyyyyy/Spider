@@ -15,7 +15,6 @@ class HtmlParser(object):
         return new_urls
 
     def _get_new_data(self, page_url, soup):
-        pass
 
     def parse(self, page_url, html_cont):
         if page_url is None or html_cont is None:
