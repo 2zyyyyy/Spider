@@ -2,3 +2,6 @@
 
 class HtmlOutputer(object):
     pass
+
+def collect_data():
+    pass
