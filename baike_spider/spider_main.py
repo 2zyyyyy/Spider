@@ -1,31 +1,30 @@
 # coding:utf-8
 
-import url_manager, html_downloader, html_parser, html_outputer
-
+from baike_spider import url_manager, html_downloader, html_outputer, html_parser
 
 class SpiderMain(object):
     def __init__(self):
         '''
-            url管理器
-            url下载器
-            url解析器
-            url输出器
+            url管理�?
+            url下载�?
+            url解析�?
+            url输出�?
         '''
         self.urls = url_manager.UrlManager()
         self.downloader = html_downloader.HtmlDownloader()
         self.parser = html_parser.HtmlParser()
         self.outputer = html_outputer.HtmlOutputer()
 
-    def craw(self, root_url):  # 爬虫的调度程序
+    def craw(self, root_url):  # �?�?的调度程�?
         self.urls.add_new_url(root_url)
 
-        while self.urls.has_new_url():  # 当URL管理器中存在URL的时候启动循环
+        while self.urls.has_new_url():  # 当URL管理器中存在URL的时候启动循�?
             count = 1
             '''
-                获取到待爬取的URL
-                启动下载器来下载这个页面 存储在html_cont  
-                调用解析器解析页面 得到新的URL列表和数组
-                将新的url数据补充进url管理器同时进行数据的收集
+                获取到待�?取的URL
+                �?动下载器来下载这�?页面 存储在html_cont  
+                调用解析器解析页�? 得到新的URL列表和数�?
+                将新的url数据补充进url管理器同时进行数�?的收�?
                 输出收集好的数据
             '''
             try:
