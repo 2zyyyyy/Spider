@@ -1,6 +1,6 @@
 # coding:utf-8
 
-from Spider import html_downloader, html_outputer, html_parser, url_manager
+import url_manager, html_downloader, html_parser, html_outputer
 
 
 class SpiderMain(object):
