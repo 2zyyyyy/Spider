@@ -2,8 +2,9 @@
 from bs4 import BeautifulSoup
 import urllib.parse
 import re
+
+
 class HtmlParser(object):
-    
     def _get_new_urls(self, page_url, soup):
         # root_url/view/10812319.htm
         new_urls = set()
@@ -21,11 +22,11 @@ class HtmlParser(object):
         res_data['url'] = page_url
 
         # <dd class="lemmaWgt-lemmaTitle-title"> <h1>Python</h1>
-        title_node = soup.find('dd', class_ = 'lemmaWgt-lemmaTitle-title').find('h1')
+        title_node = soup.find('dd', class_='lemmaWgt-lemmaTitle-title').find('h1')
         res_data['title'] = title_node.get_text()
 
         # <div class="lemma-summary">
-        summary_node = soup.find('div', class_ = 'lemma-summary')
+        summary_node = soup.find('div', class_='lemma-summary')
         res_data['summary'] = summary_node.get_text()
 
         return res_data

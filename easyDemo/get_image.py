@@ -32,6 +32,7 @@ soup = BeautifulSoup(requests.get(url, headers=headers).text, 'html.parser')
 
 def valid_img(src):
     return src.endswith('jpg') and 'img.jandan.net' in src
+# 上面代码实现了只查找src文件名以jpg结尾的，并且src中包含img.jandan.net的img标签。
 
 for img in soup.find_all('img', src=valid_img):
     src = img['src']

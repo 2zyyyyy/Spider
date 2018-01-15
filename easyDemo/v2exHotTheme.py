@@ -9,6 +9,11 @@ from bs4 import BeautifulSoup
     解析html代码，根据特征拿出目标内容
     打印这些内容
 """
+
+
+def add(a, b):
+    return a + b
+
 url = "https://www.v2ex.com"
 soup = BeautifulSoup(requests.get(url).text, 'html.parser')
 
